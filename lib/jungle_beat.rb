@@ -9,6 +9,8 @@ class JungleBeat
             if data != nil
                 @list.init_append(data)
             end
+        @rate   = rate
+        @voice  = voice
     end
 
     def append(string)
@@ -38,8 +40,16 @@ class JungleBeat
         beats = @list.to_string
         # self.rate = 500
         # self.voice = "Boing"
-        puts `say #{@rate} 500 -v #{@voice} #{beats}`
+        puts `say -r #{@rate} -v #{@voice} #{beats}`
         return @list.count
+    end
+
+    def rate
+        self.rate = 500
+    end
+    
+    def voice
+        self.voice = "Boing"
     end
 
     def reset_rate
