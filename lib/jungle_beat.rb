@@ -1,17 +1,12 @@
 class JungleBeat
 
-    def initialize(data = nil)
-            if data != nil
-                @list = LinkedList.new
-                @list.append(data)
-            else
-                @list = LinkedList.new
-            end
-        
-    end
+    attr_accessor :list
 
-    def list
-        @list
+    def initialize(data = nil)
+            @list = LinkedList.new
+            if data != nil
+                @list.init_append(data)
+            end
     end
 
     def append(string)
@@ -39,7 +34,21 @@ class JungleBeat
 
     def play
         beats = @list.to_string
-        puts `say -r 500 -v Boing #{beats}`
+        puts `say #{rate} 500 -v Boing #{beats}`
+        return @list.count
+    end
+
+    def rate
+        -r
+    end
+
+    def voice
+    end
+    
+    def reset_rate
+    end
+    
+    def reset_voice
     end
 
     def all

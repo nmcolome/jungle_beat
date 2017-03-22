@@ -11,7 +11,7 @@ class LinkedList
         if @head == nil
             @head = Node.new(data)
         else
-            list = @head
+            list = @head #use self.head (needs accessor up)
             while list.next_node != nil
                 list = list.next_node
             end
@@ -113,6 +113,18 @@ class LinkedList
         p eliminated_node.data
 
         list.next_node = nil
+    end
+
+    def init_append(string)
+        sounds_allowed = ["tee", "dee", "deep","ditt", "doo", "dop", "doop", "bop", "boop", "hoo", "la", "na", "plop", "shi", "shu", "suu", "woo"]
+        words = string.split
+        words.each do |word| 
+            if sounds_allowed.include?(word)
+               append(word) 
+            else
+                return 0
+            end
+        end
     end
     
 end
