@@ -7,6 +7,10 @@ class LinkedList
         @head       = head
     end
 
+    def head
+        @head
+    end
+    
     def append(data)
         if @head == nil
             @head = Node.new(data)
@@ -45,20 +49,11 @@ class LinkedList
     end
 
     def prepend(data)
-        # list = @head
-        # new_node = Node.new(data)
-        # new_node.next_node = list
-        # list.head = list
+        list = @head
+        new_node = Node.new(data)
+        new_node.next_node, list.head = list.head, new_node
     end
 
     def insert(position,data)
-        counter = 1
-            while list.next_node != nil
-                list = list.next_node
-                counter +=1
-            end
-        list.count == position
-            end
-            
     end
 end
