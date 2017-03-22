@@ -1,4 +1,4 @@
-require '.lib/node'
+
 class LinkedList
 
     attr_reader :head,
@@ -7,27 +7,29 @@ class LinkedList
 
     def initialize (head = nil)
         @head       = head
-        @data       = data
         @next_node  = next_node             
     end
     
     def append(data)
-        @head = Node.new(data)
+        @head = Node.new(data) if @head == nil
+        @next_node = Node.new(data) if @head != nil
     end
     
     def count
-        counter = 0
-        if @head.data != nil
+        counter = 1
+        if @head != nil
             counter +=1
+        else
+            1
         end
-        count
+        
         # while list.head.next_node != nil
         #     count +=1
         # end  
     end
     
     def to_string
-        puts "#{@head.data}"
+        "#{@head.data}"
     end
     
 end

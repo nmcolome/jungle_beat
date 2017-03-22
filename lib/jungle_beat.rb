@@ -9,6 +9,10 @@ list = LinkedList.new
 list.head
 list.append("doop")
 list
+list.head
 list.head.next_node
-# list.count
-list.to_string
+list.append("deep")
+list
+list.head.next_node
+list.count
+p list.to_string #remove p
