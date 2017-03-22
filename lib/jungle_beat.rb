@@ -22,7 +22,10 @@ list.to_string
 list.append("suu")
 list
 list.prepend("dop")
+list.to_string
+list.count
+list.insert(1, "woo")
+list.to_string
+list.insert(2, "shi")
+list.insert(3, "shu")
 p list.to_string
-p list.count
-# list.insert(1, "woo")
-# list.to_string

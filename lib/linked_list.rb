@@ -51,5 +51,15 @@ class LinkedList
     end
 
     def insert(position,data)
+        list = @head
+        new_node = Node.new(data)
+        counter = 0
+
+        while counter != position - 1
+            counter +=1
+            list = list.next_node
+        end
+        list.next_node, new_node.next_node = new_node, list.next_node
     end
+
 end
