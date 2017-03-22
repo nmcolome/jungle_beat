@@ -17,15 +17,25 @@ list = LinkedList.new
 # list.head.next_node
 # list.count
 # list.to_string
-list.append("plop")
-list.to_string
-list.append("suu")
-list
-list.prepend("dop")
-list.to_string
-list.count
-list.insert(1, "woo")
-list.to_string
-list.insert(2, "shi")
-list.insert(3, "shu")
+# list.append("plop")
+# list.to_string
+# list.append("suu")
+# list
+# list.prepend("dop")
+# list.to_string
+# list.count
+# list.insert(1, "woo")
+# list.to_string
+list.append("deep")
+list.insert(1, "shi")
+list.insert(2, "shu")
+list.append("blop")
+list.insert(1,"woo")
 p list.to_string
+# list.find(2, 1)
+# list.find(1, 3)
+p list.includes?("deep")
+# p list.includes?("dep")
+# list.pop
+# list.pop
+# list.to_string
