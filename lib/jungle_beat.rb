@@ -22,5 +22,11 @@ class JungleBeat
         #     @list = @list.head.next_node
         # end
         # info.count
-    end    
+    end
+
+    def play
+        beats = @list.to_string
+        puts `say -r 500 -v Boing #{beats}`
+    end
+       
 end

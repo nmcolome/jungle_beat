@@ -1,6 +1,6 @@
 require './lib/node'
 require './lib/linked_list.rb'
-require './lib/jungle_beat_class.rb'
+require './lib/jungle_beat.rb'
 
 # p node = Node.new("plop")
 # node.data
@@ -43,11 +43,21 @@ require './lib/jungle_beat_class.rb'
 # list.pop
 # list.to_string
 
+# jb = JungleBeat.new
+# jb.list
+# jb.list.head
+# jb.append("deep doo ditt")
+# jb.list.head.data
+# jb.list.head.next_node.data
+# jb.append("woo hoo shu")
+# p jb.count
+
+# jb = JungleBeat.new
+# p jb.append("deep doo ditt woo hoo shu")
+# p jb.count
+# p jb.list.count
+# jb.play
+
 jb = JungleBeat.new
-jb.list
-jb.list.head
-jb.append("deep doo ditt")
-jb.list.head.data
-jb.list.head.next_node.data
-jb.append("woo hoo shu")
-p jb.count
+jb.append("Mississippi")
+jb.play
