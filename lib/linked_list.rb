@@ -13,29 +13,37 @@ class LinkedList
         if @head == nil
             @head = Node.new(data)
         else
-            temporary = @head
-            while temporary.next_node != nil
-                temporary = temporary.next_node
+            list = @head
+            while list.next_node != nil
+                list = list.next_node
             end
-            temporary.next_node = Node.new(data)
+            list.next_node = Node.new(data)
         end
     end
     
     def count
-        counter = 1
-        if @head != nil
-            counter +=1
+        list = @head
+        if @head == nil
+            counter = 0
         else
-            1
+            counter = 1
+            while list.next_node != nil
+                list = list.next_node
+                counter +=1
+            end
         end
-        
-        # while list.head.next_node != nil
-        #     count +=1
-        # end  
+        counter
     end
     
     def to_string
-        "#{@head.data}"
-    end
+        string = "#{@head.data}"
+        list = @head
+        
+        while list.next_node != nil
+            list = list.next_node
+            string = string + " " + list.data
+        end
+        string
+    end    
     
 end

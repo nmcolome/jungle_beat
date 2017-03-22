@@ -8,12 +8,12 @@ node.next_node
 list = LinkedList.new
 list.head
 list.append("doop")
-p list
-p list.head
-p list.head.next_node
-p list.append("deep")
-p list
-p list.head
-# p list.head.next_node
-# # list.count
-# p list.to_string #remove p
+list
+list.head
+list.head.next_node
+list.append("deep")
+list
+list.head
+list.head.next_node
+list.count
+list.to_string
