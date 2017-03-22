@@ -7,12 +7,12 @@ class LinkedList
 
     def initialize (head = nil)
         @head       = head
-        @next_node  = next_node             
     end
     
     def append(data)
-        @head = Node.new(data) if @head == nil
-        @next_node = Node.new(data) if @head != nil
+        @head = Node.new(data) if @head == nil #applies for the first run
+        # if @head != nil
+        # @head.next_node = Node.new(data) if 
     end
     
     def count

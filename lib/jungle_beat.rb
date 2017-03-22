@@ -10,9 +10,10 @@ list.head
 list.append("doop")
 list
 list.head
-list.head.next_node
-list.append("deep")
-list
-list.head.next_node
-list.count
-p list.to_string #remove p
+p list.head.next_node
+# p list.append("deep")
+# p list
+# p list.head
+# p list.head.next_node
+# # list.count
+# p list.to_string #remove p
