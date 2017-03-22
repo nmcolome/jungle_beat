@@ -34,14 +34,16 @@ class LinkedList
     end
     
     def to_string
-        string = "#{@head.data}"
+        string = [@head.data]
         list = @head
         
         while list.next_node != nil
             list = list.next_node
-            string = string + " " + list.data
+            string << list.data
         end
-        string
+        
+        string.join(" ")
+        
     end
 
     def prepend(data)
@@ -64,34 +66,53 @@ class LinkedList
     end
 
     def find(first_position, elements_amount)
+        list = @head
+        new_node = Node.new(data)
+        counter = 0
 
+        while counter != position - 1
+            counter +=1
+            list = list.next_node
+            # counter +=1
+        end
+        list.next_node, new_node.next_node = new_node, list.next_node
     end
     
     def includes?(value) #true or false if its in the list
         list = @head
-        p list.data
-       p list.data == value
+        data_list = []
+        
+        while list.next_node != nil
+            data_list << list.data
             list = list.next_node
-            puts "ok"
+        end
+        data_list << list.data
         
-        
-            # if list.data == value
-            #     true
-            #     break
-            # else 
-            #     list = list.next_node
-            # end
-
-        # end
+        data_list.include?(value)
     end
-    
-# list = @head
-#             while list.next_node != nil
-#                 list = list.next_node
-#             end
-#             list.next_node = Node.new(data)
 
     def pop
+        list = @head
+        
+        while list.next_node != nil
+            list = list.next_node
+        end
+        p list
+        
+
+#   def insert(position,data)
+#         list = @head
+#         new_node = Node.new(data)
+#         counter = 0
+
+#         while counter != position - 1
+#             counter +=1
+#             list = list.next_node
+#             # counter +=1
+#         end
+#         list.next_node, new_node.next_node = new_node, list.next_node
+#     end
+
     end
     
 end
