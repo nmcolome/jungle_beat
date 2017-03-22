@@ -58,6 +58,8 @@ require './lib/jungle_beat.rb'
 # p jb.list.count
 # jb.play
 
-jb = JungleBeat.new
+jb = JungleBeat.new("deep")
 jb.append("Mississippi")
-jb.play
+# jb.all
+jb.prepend("tee tee tee Mississippi")
+p jb.list

@@ -9,8 +9,15 @@ class JungleBeat
     end
 
     def append(string)
+        strings_not_allowed = ["Mississippi"]
         words = string.split
-        words.each {|word| @list.append(word)}
+        words.each do |word| 
+            if strings_not_allowed.include?(word)
+               p 0
+            else 
+                @list.append(word) 
+            end
+        end
     end
 
     def count
@@ -28,5 +35,14 @@ class JungleBeat
         beats = @list.to_string
         puts `say -r 500 -v Boing #{beats}`
     end
-       
+
+    def all
+        beats = @list.to_string
+        beats
+    end
+
+    def prepend
+        
+    end
+    
 end
