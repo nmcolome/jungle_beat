@@ -1,7 +1,7 @@
 
 class LinkedList
 
-    attr_reader :head
+    attr_accessor :head
 
     def initialize (head = nil)
         @head       = head
@@ -42,7 +42,7 @@ class LinkedList
             string << list.data
         end
         
-        string.join(" ")
+        p string.join(" ")
         
     end
 
@@ -60,22 +60,30 @@ class LinkedList
         while counter != position - 1
             counter +=1
             list = list.next_node
-            # counter +=1
         end
         list.next_node, new_node.next_node = new_node, list.next_node
     end
 
-    def find(first_position, elements_amount)
+    def find(first_position, amount) #tengo q modificar find porque hace dos funciones
         list = @head
-        new_node = Node.new(data)
         counter = 0
+        data = []
 
-        while counter != position - 1
+        while counter != first_position
             counter +=1
             list = list.next_node
-            # counter +=1
         end
-        list.next_node, new_node.next_node = new_node, list.next_node
+        data << list.data
+        amount_counter = 0
+
+        while  amount_counter != amount -1
+            amount_counter += 1
+            list = list.next_node
+            data << list.data
+        end
+        
+        data.join(" ") #pasar a to_string
+
     end
     
     def includes?(value) #true or false if its in the list
@@ -93,26 +101,18 @@ class LinkedList
 
     def pop
         list = @head
-        
-        while list.next_node != nil
+        position = 0
+        previous_to_last = count - 2
+
+        while  position != previous_to_last
+            position += 1
             list = list.next_node
         end
-        list
         
+        eliminated_node = list.next_node
+        p eliminated_node.data
 
-#   def insert(position,data)
-#         list = @head
-#         new_node = Node.new(data)
-#         counter = 0
-
-#         while counter != position - 1
-#             counter +=1
-#             list = list.next_node
-#             # counter +=1
-#         end
-#         list.next_node, new_node.next_node = new_node, list.next_node
-#     end
-
+        list.next_node = nil
     end
     
 end
