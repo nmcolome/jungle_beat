@@ -1,9 +1,7 @@
 
 class LinkedList
 
-    attr_reader :head #,
-                # :data,
-                # :next_node
+    attr_reader :head
 
     def initialize (head = nil)
         @head       = head
@@ -44,6 +42,23 @@ class LinkedList
             string = string + " " + list.data
         end
         string
-    end    
-    
+    end
+
+    def prepend(data)
+        # list = @head
+        # new_node = Node.new(data)
+        # new_node.next_node = list
+        # list.head = list
+    end
+
+    def insert(position,data)
+        counter = 1
+            while list.next_node != nil
+                list = list.next_node
+                counter +=1
+            end
+        list.count == position
+            end
+            
+    end
 end
