@@ -1,5 +1,5 @@
-require "./lib/node"
-require "./lib/linked_list"
+require './lib/node'
+require './lib/linked_list.rb'
 
 node = Node.new("plop")
 node.data
@@ -7,7 +7,8 @@ node.next_node
 
 list = LinkedList.new
 list.head
-p list.append("doop")
+list.append("doop")
+list
 list.head.next_node
-list.count
+# list.count
 list.to_string
