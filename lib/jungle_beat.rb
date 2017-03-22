@@ -34,8 +34,8 @@ list.insert(1,"woo")
 list.to_string
 # list.find(2, 1)
 # list.find(1, 3)
-list.includes?("deep")
-list.includes?("dep")
+p list.includes?("deep")
+p list.includes?("dep")
 p list.pop
 # list.pop
 # list.to_string

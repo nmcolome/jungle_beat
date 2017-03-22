@@ -97,7 +97,7 @@ class LinkedList
         while list.next_node != nil
             list = list.next_node
         end
-        p list
+        list
         
 
 #   def insert(position,data)
