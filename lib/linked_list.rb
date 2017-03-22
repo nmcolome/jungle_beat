@@ -6,10 +6,6 @@ class LinkedList
     def initialize (head = nil)
         @head       = head
     end
-
-    def head
-        @head
-    end
     
     def append(data)
         if @head == nil
@@ -51,7 +47,7 @@ class LinkedList
     def prepend(data)
         list = @head
         new_node = Node.new(data)
-        new_node.next_node, list.head = list.head, new_node
+        new_node.next_node, @head = @head, new_node
     end
 
     def insert(position,data)

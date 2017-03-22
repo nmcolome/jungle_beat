@@ -20,9 +20,9 @@ list = LinkedList.new
 list.append("plop")
 list.to_string
 list.append("suu")
-p list
+list
 list.prepend("dop")
 p list.to_string
-# list.count
+p list.count
 # list.insert(1, "woo")
 # list.to_string
