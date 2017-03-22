@@ -66,4 +66,10 @@ require './lib/jungle_beat.rb'
 
 jb = JungleBeat.new("deep dop dop deep")
 jb.play
-jb.rate
+jb.rate = 100
+jb.play
+jb.voice = "Alice"
+jb.play
+jb.reset_rate
+jb.reset_voice
+jb.play
