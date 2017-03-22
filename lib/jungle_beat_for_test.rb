@@ -60,6 +60,6 @@ require './lib/jungle_beat.rb'
 
 jb = JungleBeat.new("deep")
 jb.append("Mississippi")
-# jb.all
+jb.all
 jb.prepend("tee tee tee Mississippi")
-p jb.list
+jb.all

@@ -1,7 +1,13 @@
 class JungleBeat
 
-    def initialize(list = LinkedList.new)
-        @list = list
+    def initialize(data = nil)
+            if data != nil
+                @list = LinkedList.new
+                @list.append(data)
+            else
+                @list = LinkedList.new
+            end
+        
     end
 
     def list
@@ -9,13 +15,13 @@ class JungleBeat
     end
 
     def append(string)
-        strings_not_allowed = ["Mississippi"]
+        sounds_allowed = ["tee", "dee", "deep","ditt", "doo", "dop", "doop", "bop", "boop", "hoo", "la", "na", "plop", "shi", "shu", "suu", "woo"]
         words = string.split
         words.each do |word| 
-            if strings_not_allowed.include?(word)
-               p 0
-            else 
-                @list.append(word) 
+            if sounds_allowed.include?(word)
+               @list.append(word) 
+            else
+                return 0
             end
         end
     end
@@ -37,12 +43,19 @@ class JungleBeat
     end
 
     def all
-        beats = @list.to_string
-        beats
+        @list.to_string
     end
 
-    def prepend
-        
+    def prepend(string)
+        sounds_allowed = ["tee", "dee", "deep","ditt", "doo", "dop", "doop", "bop", "boop", "hoo", "la", "na", "plop", "shi", "shu", "suu", "woo"]
+        words = string.split
+        words.each do |word|
+            if sounds_allowed.include?(word)
+                @list.prepend(word)
+            else
+                return 0
+            end
+        end
     end
     
 end
