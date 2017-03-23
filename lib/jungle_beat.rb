@@ -27,19 +27,14 @@ class JungleBeat
 
     def count
         @list.count
-        # # list = @list ---- useful for LinkedList method
-        # info = []
-        # while @list.head.next_node != nil
-        #     info << @list.head.data
-        #     @list = @list.head.next_node
-        # end
-        # info.count
+    end
+
+    def to_string
+        @list.to_string
     end
 
     def play
         beats = @list.to_string
-        # self.rate = 500
-        # self.voice = "Boing"
         puts `say -r #{@rate} -v #{@voice} #{beats}`
         return @list.count
     end
@@ -62,18 +57,6 @@ class JungleBeat
 
     def all
         @list.to_string
-    end
-
-    def prepend(string)
-        sounds_allowed = ["tee", "dee", "deep","ditt", "doo", "dop", "doop", "bop", "boop", "hoo", "la", "na", "plop", "shi", "shu", "suu", "woo"]
-        words = string.split
-        words.each do |word|
-            if sounds_allowed.include?(word)
-                @list.prepend(word)
-            else
-                return 0
-            end
-        end
     end
     
 end

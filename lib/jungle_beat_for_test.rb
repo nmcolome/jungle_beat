@@ -50,14 +50,14 @@ p list.find(1, 3)
 # list.pop
 # list.to_string
 
-# jb = JungleBeat.new
-# jb.list
-# jb.list.head
-# jb.append("deep doo ditt")
-# jb.list.head.data
-# jb.list.head.next_node.data
-# jb.append("woo hoo shu")
-# p jb.count
+p jb = JungleBeat.new
+p jb.list
+p jb.list.head
+p jb.append("deep doo ditt")
+p jb.list.head.data
+p jb.list.head.next_node.data
+p jb.append("woo hoo shu")
+p jb.count
 
 # jb = JungleBeat.new
 # p jb.append("deep doo ditt woo hoo shu")
