@@ -130,6 +130,15 @@ class JungleBeatTest < Minitest::Test
 
         assert_equal "deep doo shu ditt", jb.all
     end
+
+    def test_if_inserts_only_allowed_sounds
+        jb = JungleBeat.new
+
+        jb.append("deep doo ditt")
+        jb.insert(2, "Mississippi")
+
+        assert_equal "deep doo ditt", jb.all
+    end
     
     def test_if_find
         jb = JungleBeat.new
