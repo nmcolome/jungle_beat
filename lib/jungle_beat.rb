@@ -9,28 +9,20 @@ class JungleBeat
             if data != nil
                 @list.init_append(data)
             end
-        @rate   = rate
-        @voice  = voice
+        # @rate   = rate
+        # @voice  = voice
     end
 
     def append(string)
         sounds_allowed = ["tee", "dee", "deep","ditt", "doo", "dop", "doop", "bop", "boop", "hoo", "la", "na", "plop", "shi", "shu", "suu", "woo"]
         words = string.split
         words.each do |word| 
-            if sounds_allowed.include?(word)
-               @list.append(word) 
-            else
-                return 0
-            end
+            @list.append(word) if sounds_allowed.include?(word)
         end
     end
 
     def count
         @list.count
-    end
-
-    def to_string
-        @list.to_string
     end
 
     def play
@@ -55,7 +47,7 @@ class JungleBeat
         self.voice = "Boing"
     end
 
-    def all
+    def all 
         @list.to_string
     end
     
