@@ -123,13 +123,12 @@ class JungleBeatTest < Minitest::Test
     end
     
     def test_if_inserts
-        skip
         jb = JungleBeat.new
 
         jb.append("deep doo ditt")
-        jb.inser("shu")
+        jb.insert(2, "shu")
 
-        assert jb.insert("shu"), jb.all
+        assert_equal "deep doo shu ditt", jb.all
     end
     
     def test_if_find

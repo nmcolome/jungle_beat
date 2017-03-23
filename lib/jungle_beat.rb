@@ -55,12 +55,9 @@ class JungleBeat
         @list.includes?(data)
     end
     
-    def insert(position, data) #edit as hash
+    def insert(position, data)
         sounds_allowed = ["tee", "dee", "deep","ditt", "doo", "dop", "doop", "bop", "boop", "hoo", "la", "na", "plop", "shi", "shu", "suu", "woo"]
-        data = string.split
-        data.each do |word| 
-            @list.insert(position, data) if sounds_allowed.include?(word)
-        end
+        @list.insert(position, data) if sounds_allowed.include?(data)
     end
     
     def find(first_position, amount)
