@@ -32,11 +32,11 @@ class JungleBeat
     end
 
     def rate
-        self.rate = 500
+        @rate
     end
     
     def voice
-        self.voice = "Boing"
+        @voice
     end
 
     def reset_rate

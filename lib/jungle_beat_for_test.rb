@@ -71,12 +71,12 @@ jb.all
 jb.prepend("tee tee tee Mississippi")
 jb.all
 
-# jb = JungleBeat.new("deep dop dop deep")
-# jb.play
-# jb.rate = 100
-# jb.play
-# jb.voice = "Alice"
-# jb.play
-# jb.reset_rate
-# jb.reset_voice
-# jb.play
+jb = JungleBeat.new("deep dop dop deep")
+jb.play
+jb.rate = 100
+jb.play
+jb.voice = "Alice"
+jb.play
+jb.reset_rate
+jb.reset_voice
+jb.play
