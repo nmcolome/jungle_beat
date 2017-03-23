@@ -72,6 +72,7 @@ require './lib/jungle_beat.rb'
 # jb.all
 
 jb = JungleBeat.new("deep dop dop deep")
+jb.pop
 jb.play
 jb.rate = 100
 jb.play

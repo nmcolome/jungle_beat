@@ -112,5 +112,51 @@ class JungleBeatTest < Minitest::Test
 
         assert_equal "Boing", jb.voice
     end
+
+    def test_if_included_works
+        jb = JungleBeat.new
+
+        jb.append("deep doo ditt")
+        jb.append("woo hoo shu")
+
+        assert jb.included?("woo")
+    end
+    
+    def test_if_inserts
+        jb = JungleBeat.new
+
+        jb.append("deep doo ditt")
+        jb.insert(2, "shu")
+
+        assert_equal "deep doo shu ditt", jb.all
+    end
+
+    def test_if_inserts_only_allowed_sounds
+        jb = JungleBeat.new
+
+        jb.append("deep doo ditt")
+        jb.insert(2, "Mississippi")
+
+        assert_equal "deep doo ditt", jb.all
+    end
+    
+    def test_if_find
+        jb = JungleBeat.new
+
+        jb.append("deep doo ditt")
+        jb.append("woo hoo shu")
+        jb.find(2,3)
+
+        assert_equal ("ditt woo hoo"), jb.find(2,3)
+    end
+    
+    def test_if_pops
+        jb = JungleBeat.new
+
+        jb.append("deep doo ditt")
+        jb.pop
+
+        assert_equal "deep doo", jb.all
+    end
         
 end

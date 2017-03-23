@@ -14,10 +14,9 @@ class JungleBeat
     end
 
     def append(string)
-        sounds_allowed = ["tee", "dee", "deep","ditt", "doo", "dop", "doop", "bop", "boop", "hoo", "la", "na", "plop", "shi", "shu", "suu", "woo"]
         words = string.split
         words.each do |word| 
-            @list.append(word) if sounds_allowed.include?(word)
+            @list.append(word)
         end
     end
 

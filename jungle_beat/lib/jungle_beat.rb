@@ -50,5 +50,22 @@ class JungleBeat
     def all 
         @list.to_string
     end
+
+    def included?(data)
+        @list.includes?(data)
+    end
+    
+    def insert(position, data)
+        sounds_allowed = ["tee", "dee", "deep","ditt", "doo", "dop", "doop", "bop", "boop", "hoo", "la", "na", "plop", "shi", "shu", "suu", "woo"]
+        @list.insert(position, data) if sounds_allowed.include?(data)
+    end
+    
+    def find(first_position, amount)
+        @list.find(first_position, amount)
+    end
+    
+    def pop
+        @list.pop
+    end
     
 end

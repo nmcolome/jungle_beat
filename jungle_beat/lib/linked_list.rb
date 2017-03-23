@@ -60,7 +60,7 @@ class LinkedList
         new_node.next_node, @head = @head, new_node
     end
 
-    def insert(position,data)
+    def insert(position, data)
         list = @head
         new_node = Node.new(data)
         counter = 0
