@@ -11,41 +11,48 @@ class LinkedList
         if @head == nil
             @head = Node.new(data)
         else
-            while @head.next_node != nil
-                @head = @head.next_node
+            list = @head #I used self.head and @head, it resets the list
+            while list.next_node != nil
+                list = list.next_node
             end
-            @head.next_node = Node.new(data)
+            list.next_node = Node.new(data)
         end
-        return @head
     end
     
     def count
-        if self.head == nil
+        list = @head
+        if @head == nil
             counter = 0
         else
             counter = 1
-            while self.head.next_node != nil
-                self.head = self.head.next_node
+            while list.next_node != nil
+                list = list.next_node
                 counter +=1
             end
         end
-        return counter
+        counter
     end
     
     def to_string
         words = []
+        list = @head
 
         if @head == nil
             words
         else
-            while @head.next_node != nil
-                words << @head.data
-                @head = @head.next_node
+            while list.next_node != nil
+                words << list.data
+                list = list.next_node
             end
-            words << @head.data
+            words << list.data
         end
         
         return words.join(" ")
+    end
+
+    def includes?(value)
+        data_list = to_string.split
+        data_list.include?(value)
     end
 
     def prepend(data)
@@ -54,55 +61,53 @@ class LinkedList
     end
 
     def insert(position,data)
+        list = @head
         new_node = Node.new(data)
         counter = 0
 
         while counter != position - 1
             counter +=1
-            self.head = self.head.next_node
+            list = list.next_node
         end
-        self.head.next_node, new_node.next_node = new_node, self.head.next_node
+        list.next_node, new_node.next_node = new_node, list.next_node
     end
 
-    def find(first_position, amount) #tengo q modificar find porque hace dos funciones
+    def find(first_position, amount)
+        list = @head
         counter = 0
         data = []
 
         while counter != first_position
             counter +=1
-            self.head = self.head.next_node
+            list = list.next_node
         end
-        data << self.head.data
+        data << list.data
         amount_counter = 0
 
-        while  amount_counter != amount -1
+        while  amount_counter != amount - 1
             amount_counter += 1
-            self.head = self.head.next_node
-            data << self.head.data
+            list = list.next_node
+            data << list.data
         end
         
-        data.join(" ") #pasar a to_string
+        data.join(" ")
 
     end
     
-    def includes?(value)
-        data_list = to_string.split
-        data_list.include?(value)
-    end
-
     def pop
+        list = @head
         position = 0
         previous_to_last = count - 2
 
         while  position != previous_to_last
             position += 1
-            self.head = self.head.next_node
+            list = list.next_node
         end
         
-        eliminated_node = self.head.next_node
+        eliminated_node = list.next_node
         p eliminated_node.data
 
-        self.head.next_node = nil
+        list.next_node = nil
     end
 
     def init_append(string)

@@ -50,12 +50,24 @@ class LinkedListTest < Minitest::Test
         assert_nil list.head.next_node
     end
 
+    def test_if_tail_is_always_nil
+        list = LinkedList.new
+
+        list.append("doop")
+        list.append("deep")
+        list.append("plop")
+
+        assert_nil list.head.next_node.next_node.next_node
+    end
+
     def test_if_counts
         list = LinkedList.new
 
         list.append("doop")
+        list.append("beep")
+        list.append("plop")
 
-        assert_equal 1, list.count
+        assert_equal 3, list.count
     end
 
     def test_if_turns_to_string
@@ -66,4 +78,58 @@ class LinkedListTest < Minitest::Test
         assert_equal "doop", list.to_string
     end
     
+    def test_if_inserts_one_node
+        list = LinkedList.new
+
+        list.append("plop")
+        list.append("suu")
+        list.prepend("dop")
+        list.insert(1, "woo")
+
+        assert_equal "dop woo plop suu", list.to_string
+    end
+    
+    def test_if_prepends_one_node
+        list = LinkedList.new
+
+        list.append("plop")
+        list.append("suu")
+        list.prepend("dop")
+
+        assert_equal "dop plop suu", list.to_string
+    end
+
+    def test_if_finds_one_node
+        list = LinkedList.new
+
+        list.append("deep")
+        list.insert(1, "shi")
+        list.insert(2, "shu")
+        list.append("blop")
+        list.insert(1,"woo")
+        list.find(2,1)
+
+        assert_equal "shi", list.find(2,1)
+    end
+    
+    def test_if_pops
+        list = LinkedList.new
+
+        list.append("plop")
+        list.append("suu")
+        list.prepend("dop")
+        list.insert(1, "woo")
+
+        assert_equal "dop woo plop suu", list.to_string
+    end
+    
+    def test_if_includes
+        list = LinkedList.new
+
+        list.append("deep woo shi shu blop")
+        list.prepend("dop")
+        list.insert(1, "woo")
+
+        assert list.includes?("deep")
+    end
 end
