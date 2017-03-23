@@ -24,8 +24,8 @@ class LinkedList
             counter = 0
         else
             counter = 1
-            while list.next_node != nil
-                list = list.next_node
+            while self.head.next_node != nil
+                self.head = self.head.next_node
                 counter +=1
             end
         end
@@ -40,7 +40,7 @@ class LinkedList
             string << self.head.data
         end
         
-        p string.join(" ")
+        string.join(" ")
         
     end
 

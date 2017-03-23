@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/linked_list'
-# require './lib/node'
+require './lib/node'
 
 class LinkedListTest < Minitest::Test
 
@@ -22,11 +22,10 @@ class LinkedListTest < Minitest::Test
 
         list.append("doop")
 
-        assert_equal "doop", list.data
+        assert_equal "doop", list.head.data
     end
     
     def test_if_first_node_is_inside_head
-        skip
         list = LinkedList.new
         
         list.append("doop")
@@ -35,7 +34,6 @@ class LinkedListTest < Minitest::Test
     end
 
     def test_if_tail_defaults_to_nil
-        skip
         list = LinkedList.new
 
         list.append("doop")
@@ -44,7 +42,6 @@ class LinkedListTest < Minitest::Test
     end
 
     def test_if_counts
-        skip
         list = LinkedList.new
 
         list.append("doop")
@@ -53,12 +50,11 @@ class LinkedListTest < Minitest::Test
     end
 
     def test_if_turns_to_string
-        skip
         list = LinkedList.new
 
         list.append("doop")
 
-        assert_equal "doop", list.to_s
+        assert_equal "doop", list.to_string
     end
     
 end
