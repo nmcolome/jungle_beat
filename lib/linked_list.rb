@@ -8,15 +8,15 @@ class LinkedList
     end
     
     def append(data)
-        if 
-            @head == nil
+        if @head == nil
             @head = Node.new(data)
         else
-            while self.head.next_node != nil
-                self.head = self.head.next_node
+            while @head.next_node != nil
+                @head = @head.next_node
             end
-            self.head.next_node = Node.new(data)
+            @head.next_node = Node.new(data)
         end
+        return @head
     end
     
     def count
@@ -33,15 +33,19 @@ class LinkedList
     end
     
     def to_string
-        string = [@head.data]
-        
-        while self.head.next_node != nil
-            self.head = self.head.next_node
-            string << self.head.data
+        words = []
+
+        if @head == nil
+            words
+        else
+            while @head.next_node != nil
+                words << @head.data
+                @head = @head.next_node
+            end
+            words << @head.data
         end
         
-        string.join(" ")
-        
+        return words.join(" ")
     end
 
     def prepend(data)

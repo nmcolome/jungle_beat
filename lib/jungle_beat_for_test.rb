@@ -6,21 +6,25 @@ require './lib/jungle_beat.rb'
 # p node.data
 # p node.next_node
 
-p list = LinkedList.new
-p list.head
-p list.append("doop")
-p list.head.data
-p list.head.next_node
-p list.count
-p list.to_string
-# p list.append("deep")
-# p list
-# p list.head
+list = LinkedList.new
+list.head
+list.append("doop")
+# p list.head.data
 # p list.head.next_node
 # p list.count
 # p list.to_string
+list
+list.head
+list.head.next_node
+list.append("deep")
+# list
+# list.head
+# list.head.next_node
+# list.count
+p list.to_string
 # list.append("plop")
-# list.to_string
+# p list
+# p list.to_string
 # list.append("suu")
 # list
 # list.prepend("dop")

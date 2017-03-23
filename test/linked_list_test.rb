@@ -17,12 +17,21 @@ class LinkedListTest < Minitest::Test
         assert_equal nil, list.head
     end
 
-    def test_if_append_works
+    def test_if_first_append_works
         list = LinkedList.new
 
         list.append("doop")
 
         assert_equal "doop", list.head.data
+    end
+
+    def test_if_multiple_appends_work
+        list = LinkedList.new
+
+        list.append("doop")
+        list.append("deep")
+
+        assert_equal "doop deep", list.to_string
     end
     
     def test_if_first_node_is_inside_head
