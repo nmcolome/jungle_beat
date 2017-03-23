@@ -1,0 +1,64 @@
+require 'minitest/autorun'
+require 'minitest/pride'
+require './lib/linked_list'
+# require './lib/node'
+
+class LinkedListTest < Minitest::Test
+
+    def test_new_linked_list
+        list = LinkedList.new
+        
+        assert_equal LinkedList, list.class
+    end
+
+    def test_list_head_defaults_to_nil_if_empty
+        list = LinkedList.new
+
+        assert_equal nil, list.head
+    end
+
+    def test_if_append_works
+        list = LinkedList.new
+
+        list.append("doop")
+
+        assert_equal "doop", list.data
+    end
+    
+    def test_if_first_node_is_inside_head
+        skip
+        list = LinkedList.new
+        
+        list.append("doop")
+
+        assert_equal "doop", list.head.data
+    end
+
+    def test_if_tail_defaults_to_nil
+        skip
+        list = LinkedList.new
+
+        list.append("doop")
+
+        assert_nil list.head.next_node
+    end
+
+    def test_if_counts
+        skip
+        list = LinkedList.new
+
+        list.append("doop")
+
+        assert_equal 1, list.count
+    end
+
+    def test_if_turns_to_string
+        skip
+        list = LinkedList.new
+
+        list.append("doop")
+
+        assert_equal "doop", list.to_s
+    end
+    
+end

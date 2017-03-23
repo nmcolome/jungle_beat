@@ -3,21 +3,22 @@ require './lib/linked_list.rb'
 require './lib/jungle_beat.rb'
 
 # p node = Node.new("plop")
-# node.data
-# node.next_node
+# p node.data
+# p node.next_node
 
-# p list = LinkedList.new
-# list.head
-# p list.append("doop")
-# list
-# list.head
-# list.head.next_node
-# list.append("deep")
-# list
-# list.head
-# list.head.next_node
-# list.count
-# list.to_string
+p list = LinkedList.new
+p list.head
+p list.append("doop")
+# p list
+# p list.head.next_node
+# # p list.count
+# p list.to_string
+# p list.append("deep")
+# p list
+# p list.head
+# p list.head.next_node
+# p list.count
+# p list.to_string
 # list.append("plop")
 # list.to_string
 # list.append("suu")
@@ -27,7 +28,7 @@ require './lib/jungle_beat.rb'
 # list.count
 # list.insert(1, "woo")
 # list.to_string
-# list.append("deep")
+list.append("deep")
 # list.insert(1, "shi")
 # list.insert(2, "shu")
 # list.append("blop")
@@ -35,7 +36,7 @@ require './lib/jungle_beat.rb'
 # list.to_string
 # list.find(2, 1)
 # list.find(1, 3)
-# list.includes?("deep")
+p list.includes?("deep")
 # list.includes?("dep")
 # list.count
 # list.pop
@@ -64,12 +65,12 @@ require './lib/jungle_beat.rb'
 # jb.prepend("tee tee tee Mississippi")
 # jb.all
 
-jb = JungleBeat.new("deep dop dop deep")
-jb.play
-jb.rate = 100
-jb.play
-jb.voice = "Alice"
-jb.play
-jb.reset_rate
-jb.reset_voice
-jb.play
+# jb = JungleBeat.new("deep dop dop deep")
+# jb.play
+# jb.rate = 100
+# jb.play
+# jb.voice = "Alice"
+# jb.play
+# jb.reset_rate
+# jb.reset_voice
+# jb.play
