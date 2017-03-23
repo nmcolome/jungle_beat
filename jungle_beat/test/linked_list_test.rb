@@ -23,6 +23,7 @@ class LinkedListTest < Minitest::Test
         list.append("doop")
 
         assert_equal "doop", list.head.data
+        assert_equal Node, list.head.class
     end
 
     def test_if_multiple_appends_work
@@ -31,7 +32,7 @@ class LinkedListTest < Minitest::Test
         list.append("doop")
         list.append("deep")
 
-        assert_equal "doop deep", list.to_string
+        assert_equal "deep", list.head.next_node.data
     end
     
     def test_if_first_node_is_inside_head
@@ -63,10 +64,12 @@ class LinkedListTest < Minitest::Test
     def test_if_counts
         list = LinkedList.new
 
+        assert_equal 0, list.count
         list.append("doop")
+        assert_equal 1, list.count
         list.append("beep")
+        assert_equal 2, list.count
         list.append("plop")
-
         assert_equal 3, list.count
     end
 
@@ -126,7 +129,7 @@ class LinkedListTest < Minitest::Test
     def test_if_includes
         list = LinkedList.new
 
-        list.append("deep woo shi shu blop")
+        list.append("deep")
         list.prepend("dop")
         list.insert(1, "woo")
 

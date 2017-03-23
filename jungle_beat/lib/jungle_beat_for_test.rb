@@ -12,8 +12,8 @@ require './lib/jungle_beat.rb'
 # p list.head.data
 # p list.head.next_node
 # p list.count
-# p list.to_string
 # p list
+# p list.to_string
 # list.head
 # list.head.next_node
 # list.append("deep")
@@ -42,7 +42,7 @@ require './lib/jungle_beat.rb'
 # list
 # list.find(2, 1)
 # list.find(1, 3)
-# list.includes?("deep")
+# p list.includes?("deep")
 # list.includes?("dep")
 # list.count
 # list.pop
@@ -71,13 +71,21 @@ require './lib/jungle_beat.rb'
 # jb.prepend("tee tee tee Mississippi")
 # jb.all
 
-jb = JungleBeat.new("deep dop dop deep")
-jb.pop
-jb.play
-jb.rate = 100
-jb.play
-jb.voice = "Alice"
-jb.play
-jb.reset_rate
-jb.reset_voice
-jb.play
+# jb = JungleBeat.new("deep dop dop deep")
+# jb.pop
+# jb.play
+# jb.rate = 100
+# jb.play
+# jb.voice = "Alice"
+# jb.play
+# jb.reset_rate
+# jb.reset_voice
+# jb.play
+
+        list = LinkedList.new
+
+        list.append("deep woo shi shu blop")
+        p list
+        # list.prepend("dop")
+        # list.insert(1, "woo")
+        # list.includes?("deep")

@@ -7,21 +7,33 @@ class LinkedList
         @head       = head
     end
     
-    def append(data)
-        if @head == nil
-            @head = Node.new(data)
-        else
-            list = @head #I used self.head and @head, it resets the list
+    def append(string)
+        sounds_allowed = ["tee", "dee", "deep","ditt", "doo", "dop", "doop", "bop", "boop", "hoo", "la", "na", "plop", "shi", "shu", "suu", "woo"]
+
+        if @head.nil? && sounds_allowed.include?(data)
+            words = string.split
+            @head = Node.new(words[0])
+            words.each do |word| 
+                while @head.next_node != nil
+                @head = @head.next_node
+            end
+            @head.next_node = Node.new(data)
+            
+        else 
+            sounds_allowed.include?(data)
+            list = @head
+            
             while list.next_node != nil
                 list = list.next_node
             end
             list.next_node = Node.new(data)
         end
+
     end
     
     def count
         list = @head
-        if @head == nil
+        if @head.nil?
             counter = 0
         else
             counter = 1
@@ -51,13 +63,27 @@ class LinkedList
     end
 
     def includes?(value)
-        data_list = to_string.split
+        data_list = []
+        list = @head
+
+        if @head == nil
+            nil
+        else
+            while list.next_node != nil
+                data_list << list.data
+                list = list.next_node
+            end
+            data_list << list.data
+        end
+
         data_list.include?(value)
+        
     end
 
     def prepend(data)
-        new_node = Node.new(data)
-        new_node.next_node, @head = @head, new_node
+        temporary = @head
+        @head = Node.new(data)
+        @head.next_node = temporary
     end
 
     def insert(position, data)
@@ -96,11 +122,8 @@ class LinkedList
     
     def pop
         list = @head
-        position = 0
-        previous_to_last = count - 2
 
-        while  position != previous_to_last
-            position += 1
+        while  list.next_node.next_node
             list = list.next_node
         end
         
@@ -108,18 +131,6 @@ class LinkedList
         p eliminated_node.data
 
         list.next_node = nil
-    end
-
-    def init_append(string)
-        sounds_allowed = ["tee", "dee", "deep","ditt", "doo", "dop", "doop", "bop", "boop", "hoo", "la", "na", "plop", "shi", "shu", "suu", "woo"]
-        words = string.split
-        words.each do |word| 
-            if sounds_allowed.include?(word)
-               append(word) 
-            else
-                return 0
-            end
-        end
     end
     
 end

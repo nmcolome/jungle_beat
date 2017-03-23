@@ -21,13 +21,4 @@ class NodeTest < Minitest::Test
 
         assert_nil node.next_node
     end
-
-    def test_if_user_can_change_it
-        node = Node.new("doop")
-        
-        node.data = "pop"
-
-        assert_equal "pop", node.data
-    end
-    
 end
